@@ -11,12 +11,14 @@ class Post extends Model
 
     protected $appends = ['photo_url'];
 
-    public function user(){
+    public function user()
+    {
         //relation reference
-        return $this->belongsTo('App\Models\User','id');
+        return $this->belongsTo('App\Models\User', 'id');
     }
-public function getPhotoUrlAttribute(){
-    //asset for get url
-    return asset('storage/'.$this->attributes['photo']);
-}
+    public function getPhotoUrlAttribute()
+    {
+        //asset for get url
+        return asset('storage/' . $this->attributes['photo']);
+    }
 }
